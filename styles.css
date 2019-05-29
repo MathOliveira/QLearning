@@ -1,0 +1,20 @@
+.quadrado {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 0;
+    vertical-align: top;
+    color: #ffffff;	
+	padding-top: 30px;
+} 
+.azul{
+	background: #0057e7;
+}
+.preto{
+	background: #505050;
+}
+.verde{
+	background: #008744;
+}
+

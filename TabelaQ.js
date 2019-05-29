@@ -1,0 +1,1 @@
+$('#tabelaQ tr:last').after('<tr>...</tr><tr>...</tr>');
