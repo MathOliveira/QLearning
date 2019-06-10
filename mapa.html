@@ -1,0 +1,397 @@
+/*
+	Matheus Sant Anna de Oliveira
+	Mauricio Gerhardt 
+*/
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trabalho IA</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-md-12" style="margin-bottom: 20px">
+            <div>
+                <div class="text-center quadrado azul" id="Q5">
+                    <h5 class="norte" id="N5"></h5>
+                    <h5 class="oeste" id="O5"></h5>
+                    <h5 class="leste" id="L5"></h5>
+                    <h5 class="sul" id="S5"></h5>
+                    <h4 class="codigo">5</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q6">
+                    <h5 class="norte" id="N6"></h5>
+                    <h5 class="oeste" id="O6"></h5>
+                    <h5 class="leste" id="L6"></h5>
+                    <h5 class="sul" id="S6"></h5>
+                    <h4 class="codigo">6</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q15">
+                    <h5 class="norte" id="N15"></h5>
+                    <h5 class="oeste" id="O15"></h5>
+                    <h5 class="leste" id="L15"></h5>
+                    <h5 class="sul" id="S15"></h5>
+                    <h4 class="codigo">15</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q16">
+                    <h5 class="norte" id="N16"></h5>
+                    <h5 class="oeste" id="O16"></h5>
+                    <h5 class="leste" id="L16"></h5>
+                    <h5 class="sul" id="S16"></h5>
+                    <h4 class="codigo">16</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q25">
+                    <h5 class="norte" id="N25"></h5>
+                    <h5 class="oeste" id="O25"></h5>
+                    <h5 class="leste" id="L25"></h5>
+                    <h5 class="sul" id="S25"></h5>
+                    <h4 class="codigo">25</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q26">
+                    <h5 class="norte" id="N26"></h5>
+                    <h5 class="oeste" id="O26"></h5>
+                    <h5 class="leste" id="L26"></h5>
+                    <h5 class="sul" id="S26"></h5>
+                    <h4 class="codigo">26</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q35">
+                    <h5 class="norte" id="N35"></h5>
+                    <h5 class="oeste" id="O35"></h5>
+                    <h5 class="leste" id="L35"></h5>
+                    <h5 class="sul" id="S35"></h5>
+                    <h4 class="codigo">35</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q36">
+                    <h5 class="norte" id="N36"></h5>
+                    <h5 class="oeste" id="O36"></h5>
+                    <h5 class="leste" id="L36"></h5>
+                    <h5 class="sul" id="S36"></h5>
+                    <h4 class="codigo">36</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q45">
+                    <h5 class="norte" id="N45"></h5>
+                    <h5 class="oeste" id="O45"></h5>
+                    <h5 class="leste" id="L45"></h5>
+                    <h5 class="sul" id="S45"></h5>
+                    <h4 class="codigo">45</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q46">
+                    <h5 class="norte" id="N46"></h5>
+                    <h5 class="oeste" id="O46"></h5>
+                    <h5 class="leste" id="L46"></h5>
+                    <h5 class="sul" id="S46"></h5>
+                    <h4 class="codigo">46</h4>
+                </div>
+            </div>
+
+            <div>
+                <div class="text-center quadrado azul"id="Q4">
+                    <h5 class="norte" id="N4"></h5>
+                    <h5 class="oeste" id="O4"></h5>
+                    <h5 class="leste" id="L4"></h5>
+                    <h5 class="sul" id="S4"></h5>
+                    <h4 class="codigo">4</h4>
+                </div>
+                <div class="text-center quadrado preto"id="Q7">
+                    <h5 class="norte" id="N7"></h5>
+                    <h5 class="oeste" id="O7"></h5>
+                    <h5 class="leste" id="L7"></h5>
+                    <h5 class="sul" id="S7"></h5>
+                    <h4 class="codigo">7</h4>
+                </div>
+                <div class="text-center quadrado preto"id="Q14">
+                    <h5 class="norte" id="N14"></h5>
+                    <h5 class="oeste" id="O14"></h5>
+                    <h5 class="leste" id="L14"></h5>
+                    <h5 class="sul" id="S14"></h5>
+                    <h4 class="codigo">14</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q17">
+                    <h5 class="norte" id="N17"></h5>
+                    <h5 class="oeste" id="O17"></h5>
+                    <h5 class="leste" id="L17"></h5>
+                    <h5 class="sul" id="S17"></h5>
+                    <h4 class="codigo">17</h4>
+                </div>
+                <div class="text-center quadrado preto"id="Q24">
+                    <h5 class="norte" id="N24"></h5>
+                    <h5 class="oeste" id="O24"></h5>
+                    <h5 class="leste" id="L24"></h5>
+                    <h5 class="sul" id="S24"></h5>
+                    <h4 class="codigo">24</h4>
+                </div>
+                <div class="text-center quadrado preto"id="Q27">
+                    <h5 class="norte" id="N27"></h5>
+                    <h5 class="oeste" id="O27"></h5>
+                    <h5 class="leste" id="L27"></h5>
+                    <h5 class="sul" id="S27"></h5>
+                    <h4 class="codigo">27</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q34">
+                    <h5 class="norte" id="N34"></h5>
+                    <h5 class="oeste" id="O34"></h5>
+                    <h5 class="leste" id="L34"></h5>
+                    <h5 class="sul" id="S34"></h5>
+                    <h4 class="codigo">34</h4>
+                </div>
+                <div class="text-center quadrado preto"id="Q37">
+                    <h5 class="norte" id="N37"></h5>
+                    <h5 class="oeste" id="O37"></h5>
+                    <h5 class="leste" id="L37"></h5>
+                    <h5 class="sul" id="S37"></h5>
+                    <h4 class="codigo">37</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q44">
+                    <h5 class="norte" id="N44"></h5>
+                    <h5 class="oeste" id="O44"></h5>
+                    <h5 class="leste" id="L44"></h5>
+                    <h5 class="sul" id="S44"></h5>
+                    <h4 class="codigo">44</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q47">
+                    <h5 class="norte" id="N47"></h5>
+                    <h5 class="oeste" id="O47"></h5>
+                    <h5 class="leste" id="L47"></h5>
+                    <h5 class="sul" id="S47"></h5>
+                    <h4 class="codigo">47</h4>
+                </div>
+            </div>
+
+            <div>
+                <div class="text-center quadrado azul"id="Q3">
+                    <h5 class="norte" id="N3"></h5>
+                    <h5 class="oeste" id="O3"></h5>
+                    <h5 class="leste" id="L3"></h5>
+                    <h5 class="sul" id="S3"></h5>
+                    <h4 class="codigo">3</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q8">
+                    <h5 class="norte" id="N8"></h5>
+                    <h5 class="oeste" id="O8"></h5>
+                    <h5 class="leste" id="L8"></h5>
+                    <h5 class="sul" id="S8"></h5>
+                    <h4 class="codigo">8</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q13">
+                    <h5 class="norte" id="N13"></h5>
+                    <h5 class="oeste" id="O13"></h5>
+                    <h5 class="leste" id="L13"></h5>
+                    <h5 class="sul" id="S13"></h5>
+                    <h4 class="codigo">13</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q18">
+                    <h5 class="norte" id="N18"></h5>
+                    <h5 class="oeste" id="O18"></h5>
+                    <h5 class="leste" id="L18"></h5>
+                    <h5 class="sul" id="S18"></h5>
+                    <h4 class="codigo">18</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q23">
+                    <h5 class="norte" id="N23"></h5>
+                    <h5 class="oeste" id="O23"></h5>
+                    <h5 class="leste" id="L23"></h5>
+                    <h5 class="sul" id="S23"></h5>
+                    <h4 class="codigo">23</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q28">
+                    <h5 class="norte" id="N28"></h5>
+                    <h5 class="oeste" id="O28"></h5>
+                    <h5 class="leste" id="L28"></h5>
+                    <h5 class="sul" id="S28"></h5>
+                    <h4 class="codigo">28</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q33">
+                    <h5 class="norte" id="N33"></h5>
+                    <h5 class="oeste" id="O33"></h5>
+                    <h5 class="leste" id="L33"></h5>
+                    <h5 class="sul" id="S33"></h5>
+                    <h4 class="codigo">33</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q38">
+                    <h5 class="norte" id="N38"></h5>
+                    <h5 class="oeste" id="O38"></h5>
+                    <h5 class="leste" id="L38"></h5>
+                    <h5 class="sul" id="S38"></h5>
+                    <h4 class="codigo">38</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q43">
+                    <h5 class="norte" id="N43"></h5>
+                    <h5 class="oeste" id="O43"></h5>
+                    <h5 class="leste" id="L43"></h5>
+                    <h5 class="sul" id="S43"></h5>
+                    <h4 class="codigo">43</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q48">
+                    <h5 class="norte" id="N48"></h5>
+                    <h5 class="oeste" id="O48"></h5>
+                    <h5 class="leste" id="L48"></h5>
+                    <h5 class="sul" id="S48"></h5>
+                    <h4 class="codigo">48</h4>
+                </div>
+            </div>
+
+            <div>
+                <div class="text-center quadrado azul"id="Q2">
+                    <h5 class="norte" id="N2"></h5>
+                    <h5 class="oeste" id="O2"></h5>
+                    <h5 class="leste" id="L2"></h5>
+                    <h5 class="sul" id="S2"></h5>
+                    <h4 class="codigo">2</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q9">
+                    <h5 class="norte" id="N9"></h5>
+                    <h5 class="oeste" id="O9"></h5>
+                    <h5 class="leste" id="L9"></h5>
+                    <h5 class="sul" id="S9"></h5>
+                    <h4 class="codigo">9</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q12">
+                    <h5 class="norte" id="N12"></h5>
+                    <h5 class="oeste" id="O12"></h5>
+                    <h5 class="leste" id="L12"></h5>
+                    <h5 class="sul" id="S12"></h5>
+                    <h4 class="codigo">12</h4>
+                </div>
+                <div class="text-center quadrado preto"id="Q19">
+                    <h5 class="norte" id="N19"></h5>
+                    <h5 class="oeste" id="O19"></h5>
+                    <h5 class="leste" id="L19"></h5>
+                    <h5 class="sul" id="S19"></h5>
+                    <h4 class="codigo">19</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q22">
+                    <h5 class="norte" id="N22"></h5>
+                    <h5 class="oeste" id="O22"></h5>
+                    <h5 class="leste" id="L22"></h5>
+                    <h5 class="sul" id="S22"></h5>
+                    <h4 class="codigo">22</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q29">
+                    <h5 class="norte" id="N29"></h5>
+                    <h5 class="oeste" id="O29"></h5>
+                    <h5 class="leste" id="L29"></h5>
+                    <h5 class="sul" id="S29"></h5>
+                    <h4 class="codigo">29</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q32">
+                    <h5 class="norte" id="N32"></h5>
+                    <h5 class="oeste" id="O32"></h5>
+                    <h5 class="leste" id="L32"></h5>
+                    <h5 class="sul" id="S32"></h5>
+                    <h4 class="codigo">32</h4>
+                </div>
+                <div class="text-center quadrado preto"id="Q39">
+                    <h5 class="norte" id="N39"></h5>
+                    <h5 class="oeste" id="O39"></h5>
+                    <h5 class="leste" id="L39"></h5>
+                    <h5 class="sul" id="S39"></h5>
+                    <h4 class="codigo">39</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q42">
+                    <h5 class="norte" id="N42"></h5>
+                    <h5 class="oeste" id="O42"></h5>
+                    <h5 class="leste" id="L42"></h5>
+                    <h5 class="sul" id="S42"></h5>
+                    <h4 class="codigo">42</h4>
+                </div>
+                <div class="text-center quadrado azul"id="Q49">
+                    <h5 class="norte" id="N49"></h5>
+                    <h5 class="oeste" id="O49"></h5>
+                    <h5 class="leste" id="L49"></h5>
+                    <h5 class="sul" id="S49"></h5>
+                    <h4 class="codigo">49</h4>
+                </div>
+            </div>
+
+            <div>
+                <div class="text-center quadrado verde"id="Q1">
+                    <h5 class="norte" id="N1"></h5>
+                    <h5 class="oeste" id="O1"></h5>
+                    <h5 class="leste" id="L1"></h5>
+                    <h5 class="sul" id="S1"></h5>
+                    <h4 class="codigo">1</h4>
+                </div>
+                <div class="text-center quadrado preto"id="Q10">
+                    <h5 class="norte" id="N10"></h5>
+                    <h5 class="oeste" id="O10"></h5>
+                    <h5 class="leste" id="L10"></h5>
+                    <h5 class="sul" id="S10"></h5>
+                    <h4 class="codigo">10</h4>
+                </div>
+                <div class="text-center quadrado preto"id="Q11">
+                    <h5 class="norte" id="N11"></h5>
+                    <h5 class="oeste" id="O11"></h5>
+                    <h5 class="leste" id="L11"></h5>
+                    <h5 class="sul" id="S11"></h5>
+                    <h4 class="codigo">11</h4>
+                </div>
+                <div class="text-center quadrado preto"id="Q20">
+                    <h5 class="norte" id="N20"></h5>
+                    <h5 class="oeste" id="O20"></h5>
+                    <h5 class="leste" id="L20"></h5>
+                    <h5 class="sul" id="S20"></h5>
+                    <h4 class="codigo">20</h4>
+                </div>
+                <div class="text-center quadrado preto"id="Q21">
+                    <h5 class="norte" id="N21"></h5>
+                    <h5 class="oeste" id="O21"></h5>
+                    <h5 class="leste" id="L21"></h5>
+                    <h5 class="sul" id="S21"></h5>
+                    <h4 class="codigo">21</h4>
+                </div>
+                <div class="text-center quadrado preto"id="Q30">
+                    <h5 class="norte" id="N30"></h5>
+                    <h5 class="oeste" id="O30"></h5>
+                    <h5 class="leste" id="L30"></h5>
+                    <h5 class="sul" id="S30"></h5>
+                    <h4 class="codigo">30</h4>
+                </div>
+                <div class="text-center quadrado preto"id="Q31">
+                    <h5 class="norte" id="N31"></h5>
+                    <h5 class="oeste" id="O31"></h5>
+                    <h5 class="leste" id="L31"></h5>
+                    <h5 class="sul" id="S31"></h5>
+                    <h4 class="codigo">31</h4>
+                </div>
+                <div class="text-center quadrado preto"id="Q40">
+                    <h5 class="norte" id="N40"></h5>
+                    <h5 class="oeste" id="O40"></h5>
+                    <h5 class="leste" id="L40"></h5>
+                    <h5 class="sul" id="S40"></h5>
+                    <h4 class="codigo">40</h4>
+                </div>
+                <div class="text-center quadrado preto"id="Q41">
+                    <h5 class="norte" id="N41"></h5>
+                    <h5 class="oeste" id="O41"></h5>
+                    <h5 class="leste" id="L41"></h5>
+                    <h5 class="sul" id="S41"></h5>
+                    <h4 class="codigo">41</h4>
+                </div>
+                <div class="text-center quadrado verde"id="Q50">
+                    <h5 class="norte" id="N50"></h5>
+                    <h5 class="oeste" id="O50"></h5>
+                    <h5 class="leste" id="L50"></h5>
+                    <h5 class="sul" id="S50"></h5>
+                    <h4 class="codigo">50</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="row" style="width: 1050px">
+                <button id="btnInicia" type="button" class="btn" style="height:50px; width:150px; background-color:#732dab; color:#ffffff; position:absolute;">Iniciar</button>
+                <button id="btnPoliticaPerfeita" type="button" class="btn" style="height:50px; width:150px; background-color:#732dab; color:#ffffff; position:absolute; left:160px;">Politica Perfeita</button>
+				<button id="btnSimulacao" type="button" class="btn" style="height:50px; width:150px; background-color:#732dab; color:#ffffff; position:absolute; left:320px;">Simulação</button>
+				<textarea id="DISPLAY" cols="40" rows="5" style="position: absolute; height: 200px; width: 500px; top: 60px;"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script src="QLearning.js"></script>
+    <script src="TabelaQ.js"></script>
+</body>
+
+</html>

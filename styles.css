@@ -1,12 +1,12 @@
 .quadrado {
     width: 100px;
-    height: 100px;
+    height: 120px;
     display: inline-block;
     margin-top: 5px;
     margin-bottom: 0;
     vertical-align: top;
     color: #ffffff;	
-	padding-top: 30px;
+	padding-top: 0px;
 } 
 .azul{
 	background: #0057e7;
@@ -18,3 +18,48 @@
 	background: #008744;
 }
 
+.norte{
+	width: 0px;
+	height: 0px;
+	position: relative;
+	left: 34px;
+	top: 7px;
+	margin: 0px;
+}
+
+.oeste{
+	width: 0px;
+	height: 0px;
+	position: relative;
+	left: 1px;
+	top: 50px;
+	margin: 0px;
+}
+
+.leste{
+	width: 0px;
+	height: 0px;
+	position: relative;
+	left: 63px;
+	top: 50px;
+	margin: 0px;
+}
+
+.sul{
+	width: 0px;
+	height: 0px;
+	position: relative;
+	left: 34px;
+	top: 100px;
+	margin: 0px;
+}
+
+.codigo{
+	width: 0px;
+	height: 0px;
+	position: relative;
+	left: 38px;
+	top: 48px;
+	margin: 0px;
+	color: #ffa700;
+}

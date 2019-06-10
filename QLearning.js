@@ -1,8 +1,7 @@
-
-	
-	//Melhorias que devem ser feitas:
-	//-Tabela Q dinamica.
-	//-Ponto de parada.
+/*
+	Matheus Sant Anna de Oliveira
+	Mauricio Gerhardt 
+*/
 
 	//Escolhe ação randomicamente para o estado passado.
 	function EscolheAcao(estado){
@@ -18,6 +17,32 @@
 		ExecutaAcao(acaoEscolhida, estado);
 	}
 
+/********************************************************************************************/	
+	function EscolheAcaoPerfeita(estado){
+		var acaoEscolhida = EscolheMelhorAcao(estado);
+		
+		//No momento que encontrar uma movimentação valida, chama função de execução.
+		ExecutaAcao(acaoEscolhida, estado);
+	}
+
+	function EscolheMelhorAcao(estadoProximo){
+		
+		var maiorQ = -5000000000;
+		var melhorAcao = 0;
+		for(var i=0;i<3;i++)
+		{
+			if(QL.qlist[estadoProximo-1].acoes[i])
+				if(QL.qlist[estadoProximo-1].recompensas[i] > maiorQ){
+					maiorQ = QL.qlist[estadoProximo-1].recompensas[i];
+					melhorAcao = i;
+				}
+		}
+		
+		return melhorAcao;
+	}
+
+/********************************************************************************************/
+	
 	//Executa ação para o estado passados.
 	function ExecutaAcao(acaoEscolhida, estado){
 		
@@ -60,8 +85,18 @@
 	function AtualizaCSS(estadoAtual,estadoProximo){	
 		AtualizaCSSAnterior(estadoAtual);
 		var Q = "#Q" + estadoProximo;
-		$(Q).css('background','#e60000');
-		$(Q).text(QL.qlist[estadoProximo-1].recompensas[]);
+		var N = "#N" + estadoProximo;
+		var S = "#S" + estadoProximo;
+		var L = "#L" + estadoProximo;
+		var O = "#O" + estadoProximo;
+		
+		$(Q).css('background','#e60000');//Vermelho
+		
+		//(norte, leste, sul, oeste)
+		$(N).text("N:" + Math.round(QL.qlist[estadoProximo-1].recompensas[0]));
+		$(L).text("L:" + Math.round(QL.qlist[estadoProximo-1].recompensas[1]));
+		$(S).text("S:" + Math.round(QL.qlist[estadoProximo-1].recompensas[2]));
+		$(O).text("O:" + Math.round(QL.qlist[estadoProximo-1].recompensas[3]));
 	};
 
 	function AtualizaCSSAnterior(estado){
@@ -181,50 +216,99 @@
 	
 	//#endregion Construtores
 	
-	//Inicializar programa e executar.
-	function Inicializar(){
-		QL.estadoAtual = 1;
-		var cont = 0;
-		var qntd = parseInt($('#txtQntd').val());
-		var loop = setInterval(function(){
-			if(cont==qntd){
-				clearInterval(loop);
-			}
-			else{
-				EscolheAcao(QL.estadoAtual);
-				if(QL.estadoAtual==50){
-					QL.estadoAtual = 1;
-					cont++;
-				}	
-			}			 
-		},0.0000001)
+	var movimentosEpisodio = 0;
+	var movimentosPerfeitos = 0;
+	var inicializarTerminou = false;
+	var politicaPerfeitaTerminou = false;
+
+	function Simulacao() {
 				
+		movimentosEpisodio = 0;
+		movimentosPerfeitos = 0;
+		inicializarTerminou = false;
+		politicaPerfeitaTerminou = false;
+		
+		var cont = 0;
+		var qntd = 10;
+		
+		
+			Inicializar();
+			var aux = setInterval(function () {
+				if (inicializarTerminou) {
+					clearInterval(aux);
+
+					PoliticaPerfeita();
+					aux = setInterval(function () {
+						if (politicaPerfeitaTerminou) {
+							clearInterval(aux);
+							if($('#DISPLAY').val() === "" || $('#DISPLAY').val() === null || $('#DISPLAY').val() === undefined || $('#DISPLAY').val() === " "){
+								$('#DISPLAY').val('Movimentos episódios: ' + movimentosEpisodio + ' Movimentos política perfeita: ' + movimentosPerfeitos);
+							} else {
+								$('#DISPLAY').val($('#DISPLAY').val() + '\nMovimentos episódios: ' + movimentosEpisodio + ' Movimentos política perfeita: ' + movimentosPerfeitos);
+							}
+							
+							cont++;
+							inicializarTerminou = false;
+							politicaPerfeitaTerminou = false;
+							
+							console.log('Movimentos episódios: ' + movimentosEpisodio + ' Movimentos política perfeita: ' + movimentosPerfeitos);
+						}
+					}, 100);
+				}
+			}, 100);
 	}
 
-	function mostraTabelaQ(){
-		for(var i=0;i<50;i++){
-			for(var j=0;j<4;j++)
-				if(QL.qlist[i].acoes[j]){
-					var cont = i+1;
-					if(j==0)
-						console.log("E"+cont+ " Norte" + "-     " + QL.qlist[i].recompensas[j])
-					else if(j==1)
-						console.log("E"+cont + " Leste" + "-     " + QL.qlist[i].recompensas[j])
-					else if(j==2)
-						console.log("E"+cont+ " Sul" + "-       " + QL.qlist[i].recompensas[j])	
-					else if(j==3)
-						console.log("E"+cont+ " Oeste" + "-     " + QL.qlist[i].recompensas[j])
+	function Inicializar() {
+		QL.estadoAtual = 1;
+		var cont = 0;
+		var qntd = 1;
+
+		var loop = setInterval(function () {
+			if (cont == qntd) {
+				clearInterval(loop);
+				inicializarTerminou = true;
+			} else {
+				EscolheAcao(QL.estadoAtual);
+				movimentosEpisodio++;
+				
+				if (QL.estadoAtual == 50) {
+					QL.estadoAtual = 1;
+					cont++;
 				}
-    			
-		}
+			}
+		}, 50);
+	}
+
+	function PoliticaPerfeita() {
+		QL.estadoAtual = 1;
+		var cont = 0;
+		var qntd = 1;
+
+		var loop = setInterval(function () {
+			if (cont == qntd) {
+				clearInterval(loop);
+				politicaPerfeitaTerminou = true;
+			} else {
+				EscolheAcaoPerfeita(QL.estadoAtual);
+				movimentosPerfeitos++;
+				
+				if (QL.estadoAtual == 50) {
+					QL.estadoAtual = 1;
+					cont++;
+				}
+			}
+		}, 100);
 	}
 
 	//Eventos
-
 	$("#btnInicia").on('click',function(){
 		Inicializar();
 	})
-
-	$('#mostraTabela').on('click',function(){
-		mostraTabelaQ();
+	
+	$("#btnPoliticaPerfeita").on('click',function(){
+		PoliticaPerfeita();
+	})
+	
+	$("#btnSimulacao").on('click',function(){
+		Simulacao();
 	})
